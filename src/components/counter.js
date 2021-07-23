@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-// actions
+// importing actions
 import { increment, decrement } from "../redux/ducks/counter";
 
 const Counter = (props) => {
   const [vote, setVote] = useState(0);
 
-  // useDispatch hook for dispatching actions
+  // useDispatch hook for dispatching actns
   const dispatch = useDispatch();
-  const { name } = props;
+
   const handleIncrement = () => {
-    dispatch(increment());
+    dispatch(increment()); //dispatched increment actn
     setVote(vote + 1);
   };
   const handleDecrement = () => {
-    dispatch(decrement());
+    dispatch(decrement()); // dispatched decrement actn
     setVote(vote - 1);
   };
 
   return (
     <div className="counterBox">
-      <h3>{name}</h3>
+      <h3>{props.name}</h3>
       <h4>Votes: {vote}</h4>
       <button className="button" onClick={handleDecrement}>
         -

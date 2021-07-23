@@ -13,9 +13,14 @@
 }
 
 .counterBox {
-  width: 300px;
+  width: 250px;
   background: rgb(255, 195, 195);
   padding: 10px;
   margin: 10px auto;
+  border: 1px solid black;
   border-radius: 10px;
+}
+
+.credits {
+  margin: 30px auto;
 }
