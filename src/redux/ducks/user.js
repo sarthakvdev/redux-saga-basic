@@ -21,7 +21,7 @@ const intialState = {
 export default (state = intialState, action) => {
   switch (action.type) {
     case SET_USER:
-      const user = action.user;
+      const { user } = action;
       return { ...state, user };
     default:
       return state;
