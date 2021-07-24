@@ -28,5 +28,4 @@ export default (state = intialState, action) => {
   }
 };
 
-/* Not making a reducer fot GET_USER because
- the watcher will attend it */
+/* Not making a reducer fot GET_USER because the watcher will attend it */

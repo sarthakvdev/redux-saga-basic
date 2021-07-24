@@ -11,12 +11,11 @@ export default function App() {
     dispatch(getUser());
   }, [dispatch]);
 
-  const user = useSelector((state) => state.user.user);
-  console.log(user);
-  // importing the state variable from store: useSelector hook
-  const people = ["Bruce Wayne", "Selina Kyle", "Bob Dylan"];
-
+  // importing the state variable from store using useSelector hook
   const count = useSelector((state) => state.counter.count);
+  const user = useSelector((state) => state.user.user);
+
+  const people = ["Bruce Wayne", "Selina Kyle", "Bob Dylan"];
   return (
     <div className="App">
       <h2>Hello, {user ? user.firstName : ""}</h2>
@@ -25,7 +24,7 @@ export default function App() {
         <Counter name={name} key={index} />
       ))}
 
-      <p className="credits">Made by Surface Dwellers</p>
+      <p className="credits">Built by Surface Dwellers</p>
     </div>
   );
 }

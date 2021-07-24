@@ -10,7 +10,7 @@ import { requestGetUser } from "../requests/users";
 export function* handleGetUser(action) {
   try {
     const response = yield call(requestGetUser);
-    const data = response.data;
+    const { data } = response;
     yield put(setUser(data));
   } catch (error) {
     console.log(error);
