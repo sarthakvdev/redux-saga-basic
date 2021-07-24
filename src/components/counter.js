@@ -6,6 +6,7 @@ import { increment, decrement } from "../redux/ducks/counter";
 
 const Counter = (props) => {
   const [vote, setVote] = useState(0);
+  const { user } = props;
 
   // useDispatch hook for dispatching actns
   const dispatch = useDispatch();
@@ -21,7 +22,8 @@ const Counter = (props) => {
 
   return (
     <div className="counterBox">
-      <h3>{props.name}</h3>
+      <h3>{user.name}</h3>
+      <div style={{ marginTop: "-15px" }}>@{user.username}</div>
       <h4>Votes: {vote}</h4>
       <button className="button" onClick={handleDecrement}>
         -

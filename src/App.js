@@ -14,15 +14,13 @@ export default function App() {
   // importing the state variable from store using useSelector hook
   const count = useSelector((state) => state.counter.count);
   const user = useSelector((state) => state.user.user);
-
-  const people = ["Bruce Wayne", "Selina Kyle", "Bob Dylan"];
+  console.log(user);
   return (
     <div className="App">
-      <h2>Hello, {user ? user.firstName : ""}</h2>
       <h2>Total Votes: {count}</h2>
-      {people.map((name, index) => (
-        <Counter name={name} key={index} />
-      ))}
+      {user
+        ? user.map((user, index) => <Counter user={user} key={index} />)
+        : ""}
 
       <p className="credits">Built by Surface Dwellers</p>
     </div>
